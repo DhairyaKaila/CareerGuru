@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CareerGuru - Your AI Career Guide</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="logo">🚀 CareerGuru</a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home">Home</a></li>
+                    <li class="nav-item"><a href="#services">Services</a></li>
+                    <li class="nav-item"><a href="#careers">Careers</a></li>
+                    <!-- <li class="nav-item"><a href="#about">About</a></li>
+                    <li class="nav-item"><a href="#contact">Contact</a></li> -->
+                </ul>
+                <button class="chat-toggle" id="chatToggle">💬 Ask AI</button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Find Your Dream Career</h1>
+                <p>Get personalized career guidance with AI-powered insights.
+                    Discover opportunities that match your skills, interests,
+                    and goals.</p>
+                <button class="cta-button" id="startChat">Start AI Career
+                    Chat</button>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section" id="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🎯</div>
+                        <h3>Career Assessment</h3>
+                        <p>Discover your strengths, interests, and ideal career
+                            paths through comprehensive AI-powered
+                            assessments.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💼</div>
+                        <h3>Job Matching</h3>
+                        <p>Find job opportunities that perfectly match your
+                            skills, experience, and career aspirations.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📚</div>
+                        <h3>Skill Development</h3>
+                        <p>Get personalized learning recommendations to develop
+                            the skills needed for your target career.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🤝</div>
+                        <h3>Interview Prep</h3>
+                        <p>Practice with AI-powered interview simulations and
+                            get feedback to ace your next interview.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📝</div>
+                        <h3>Resume Building</h3>
+                        <p>Create professional resumes that stand out with our
+                            AI-powered resume builder and optimization
+                            tools.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌐</div>
+                        <h3>Industry Insights</h3>
+                        <p>Stay updated with the latest industry trends, salary
+                            information, and career opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Paths Section -->
+        <section class="section" id="careers">
+            <div class="container">
+                <h2 class="section-title">Popular Career Paths</h2>
+                <div class="career-paths">
+                    <div class="career-card"
+                        onclick="askAboutCareer('Software Development')">
+                        <h4>💻 Software Development</h4>
+                        <p>Build applications, websites, and systems</p>
+                    </div>
+                    <div class="career-card"
+                        onclick="askAboutCareer('Data Science')">
+                        <h4>📊 Data Science</h4>
+                        <p>Analyze data to drive business decisions</p>
+                    </div>
+                    <div class="career-card"
+                        onclick="askAboutCareer('Digital Marketing')">
+                        <h4>📱 Digital Marketing</h4>
+                        <p>Promote brands in the digital world</p>
+                    </div>
+                    <div class="career-card"
+                        onclick="askAboutCareer('UX/UI Design')">
+                        <h4>🎨 UX/UI Design</h4>
+                        <p>Create user-friendly digital experiences</p>
+                    </div>
+                    <div class="career-card"
+                        onclick="askAboutCareer('Cybersecurity')">
+                        <h4>🔒 Cybersecurity</h4>
+                        <p>Protect digital assets and information</p>
+                    </div>
+                    <div class="career-card"
+                        onclick="askAboutCareer('Product Management')">
+                        <h4>🚀 Product Management</h4>
+                        <p>Guide product strategy and development</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" id="contact">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Support</a>
+                </div>
+                <p>&copy; 2024 CareerGuru. All rights reserved. Powered by AI
+                    for your career success.</p>
+            </div>
+        </footer>
+
+        <!-- Chat Section -->
+        <div class="chat-section" id="chatSection">
+            <div class="chat-header">
+                <h3>🤖 Career AI Assistant</h3>
+                <button class="close-chat" id="closeChat">×</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message assistant">
+                    <div class="message-bubble">
+                        👋 Hi! I'm your AI Career Guide. I can help you with:
+                        <br>• Career planning and advice
+                        <br>• Job search strategies
+                        <br>• Skill development recommendations
+                        <br>• Interview preparation
+                        <br>• Resume tips
+                        <br><br>What would you like to know about your career?
+                    </div>
+                </div>
+            </div>
+            <div class="typing-indicator-chat" id="typingIndicatorChat">AI is
+                typing...</div>
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <input type="text" class="chat-input" id="chatInput"
+                        placeholder="Ask about your career...">
+                    <button class="chat-send" id="chatSend">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="index.js">
+
+</script>
+    </body>
+</html>
